@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Scraper</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+    #container { max-width: 600px; margin: 0 auto; }
+    input, button { padding: 10px; margin: 10px 0; width: 100%; }
+    pre { background: #f4f4f4; padding: 10px; }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>URL Scraper</h1>
+    <form id="scrapeForm">
+      <input type="text" id="urlInput" placeholder="Enter URL" required />
+      <button type="submit">Scrape URL</button>
+    </form>
+    <div id="result">
+      <h2>Result</h2>
+      <pre id="resultContent"></pre>
+    </div>
+  </div>
+  <script>
+    document.getElementById('scrapeForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const url = document.getElementById('urlInput').value;
+
+      try {
+        const response = await fetch('/scrape', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url }),
+        });
+
+        const data = await response.json();
+        document.getElementById('resultContent').textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById('resultContent').textContent = 'An error occurred while scraping.';
+      }
+    });
+  </script>
+</body>
+</html>

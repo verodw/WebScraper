@@ -1,0 +1,132 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+  --foreground-rgb: 20, 27, 65; /* #141B41 */
+  --background-start-rgb: 251, 87, 51; /* #FB5733 */
+  --background-end-rgb: 85, 42, 138; /* #552A8A */
+
+  --primary-glow: radial-gradient(
+    circle,
+    rgba(251, 87, 51, 0.4),
+    rgba(251, 87, 51, 0)
+  );
+  --secondary-glow: linear-gradient(
+    to bottom right,
+    rgba(251, 87, 51, 0.2),
+    rgba(251, 87, 51, 0.1)
+  );
+
+  --tile-start-rgb: 255, 247, 243; /* #FFF7F3 */
+  --tile-end-rgb: 255, 239, 234; /* #FFEFEB */
+  --tile-border: conic-gradient(
+    #FF573380,
+    #FF573340,
+    #FF573330,
+    #FF573320,
+    #FF573310,
+    #FF573310,
+    #FF573380
+  );
+
+  --callout-rgb: 255, 250, 245; /* #FFFAF5 */
+  --callout-border-rgb: 255, 200, 180; /* #FFC8B4 */
+  --card-rgb: 255, 204, 198; /* #FFCCC6 */
+  --card-border-rgb: 255, 180, 165; /* #FFB4A5 */
+
+  --toggle-background: #ccc;
+  --toggle-checked-background: #FF5733;
+
+  --button-border: #5A2790; 
+  --button-text: #000000; 
+  --button-hover-background: #f0f0f0; 
+  --button-hover-text: #000000; 
+}
+
+.dark-theme {
+  --foreground-rgb: 245, 245, 245; /* Light grey for dark mode */
+  --background-start-rgb: 85, 42, 138; /* #552A8A */
+  --background-end-rgb: 20, 20, 20; /* Dark grey */
+
+  --primary-glow: radial-gradient(
+    circle,
+    rgba(255, 87, 51, 0.6),
+    rgba(255, 87, 51, 0)
+  );
+  --secondary-glow: linear-gradient(
+    to bottom right,
+    rgba(255, 87, 51, 0.3),
+    rgba(255, 87, 51, 0.2)
+  );
+
+  --tile-start-rgb: 85, 42, 138; /* Dark purple */
+  --tile-end-rgb: 20, 20, 20; /* Dark grey */
+  --tile-border: conic-gradient(
+    #AB358580,
+    #AB358540,
+    #AB358530,
+    #AB358520,
+    #AB358510,
+    #AB358510,
+    #AB358580
+  );
+
+  --callout-rgb: 60, 60, 60; /* Dark grey */
+  --callout-border-rgb: 120, 120, 120; /* Light grey */
+  --card-rgb: 100, 100, 100; /* Grey */
+  --card-border-rgb: 200, 200, 200; /* Light grey */
+
+  --toggle-background: #555;
+  --toggle-checked-background: #FF5733;
+
+  --button-border: #FF5733; /* Border color for dark mode buttons */
+  --button-text: #ffffff; /* Text color for dark mode buttons */
+  --button-hover-background: #444; /* Hover background for dark mode buttons */
+  --button-hover-text: #ffffff; /* Hover text color for dark mode buttons */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgba(var(--background-start-rgb), 1),
+      rgba(var(--background-end-rgb), 1)
+    );
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  transition: color 0.3s ease;
+}
+
+p {
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
